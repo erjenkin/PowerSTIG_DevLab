@@ -52,4 +52,11 @@ Write-EventLog -LogName Application -Source 'BuildScript' -EntryType Information
 
 Install-module Powerstig -Force -Confirm:$false
 
-Invoke-WebRequest -Uri 'https://raw.githubusercontent.com/rchristman89/BuildServer/master/packages.config' -OutFile 'C:\Configs'
+[Net.ServicePointManager]::SecurityProtocol = [Net.SecurityProtocolType]::Tls12
+Invoke-WebRequest -Uri 'https://raw.githubusercontent.com/erjenkin/PowerSTIG_DevLab/master/Configs/FirefoxConfig.ps1' -OutFile 'C:\FirefoxConfig.ps1'
+Invoke-WebRequest -Uri 'https://raw.githubusercontent.com/erjenkin/PowerSTIG_DevLab/master/Configs/InternetExplorerConfig.ps1' -OutFile 'C:\InternetExplorerConfig.ps1'
+Invoke-WebRequest -Uri 'https://raw.githubusercontent.com/erjenkin/PowerSTIG_DevLab/master/Configs/OfficeConfig.ps1' -OutFile 'C:\OfficeConfig.ps1'
+Invoke-WebRequest -Uri 'https://raw.githubusercontent.com/erjenkin/PowerSTIG_DevLab/master/Configs/OracleJreConfig.ps1' -OutFile 'C:\OracleJreConfig.ps1'
+Invoke-WebRequest -Uri 'https://raw.githubusercontent.com/erjenkin/PowerSTIG_DevLab/master/Configs/Windows10Config.ps1' -OutFile 'C:\Windows10Config.ps1'
+Invoke-WebRequest -Uri 'https://raw.githubusercontent.com/erjenkin/PowerSTIG_DevLab/master/Configs/WindowsFirewallConfig.ps1' -OutFile 'C:\WindowsFirewallConfig.ps1'
+Invoke-WebRequest -Uri 'https://raw.githubusercontent.com/erjenkin/PowerSTIG_DevLab/master/Configs/WindowsDefenderConfig.ps1' -OutFile 'C:\WindowsDefenderConfig.ps1'
