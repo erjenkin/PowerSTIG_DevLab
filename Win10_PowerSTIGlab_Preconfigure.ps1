@@ -62,3 +62,7 @@ Invoke-WebRequest -Uri 'https://raw.githubusercontent.com/erjenkin/PowerSTIG_Dev
 Invoke-WebRequest -Uri 'https://raw.githubusercontent.com/erjenkin/PowerSTIG_DevLab/master/Configs/WindowsFirewallConfig.ps1' -OutFile 'C:\WindowsFirewallConfig.ps1'
 Invoke-WebRequest -Uri 'https://raw.githubusercontent.com/erjenkin/PowerSTIG_DevLab/master/Configs/WindowsDefenderConfig.ps1' -OutFile 'C:\WindowsDefenderConfig.ps1'
 Write-EventLog -LogName Application -Source 'BuildScript' -EntryType Information -EventId 1 -Message 'Copied Technlogy Configs'
+
+Write-EventLog -LogName Application -Source 'BuildScript' -EntryType Information -EventId 1 -Message 'Copying Post Configuration Script'
+Invoke-WebRequest -Uri 'https://raw.githubusercontent.com/erjenkin/PowerSTIG_DevLab/master/Win10_PowerSTIGlab_PostConfigure.ps1' -OutFile 'C:\Win10_PowerSTIGlab_PostConfigure.ps1'
+Write-EventLog -LogName Application -Source 'BuildScript' -EntryType Information -EventId 1 -Message 'Copied Post Configuration Script'
