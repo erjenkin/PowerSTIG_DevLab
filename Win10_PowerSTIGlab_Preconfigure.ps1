@@ -66,3 +66,5 @@ Write-EventLog -LogName Application -Source 'BuildScript' -EntryType Information
 Write-EventLog -LogName Application -Source 'BuildScript' -EntryType Information -EventId 1 -Message 'Copying Post Configuration Script'
 Invoke-WebRequest -Uri 'https://raw.githubusercontent.com/erjenkin/PowerSTIG_DevLab/master/Win10_PowerSTIGlab_PostConfigure.ps1' -OutFile 'C:\Win10_PowerSTIGlab_PostConfigure.ps1'
 Write-EventLog -LogName Application -Source 'BuildScript' -EntryType Information -EventId 1 -Message 'Copied Post Configuration Script'
+
+Set-ExecutionPolicy unrestricted -force
