@@ -12,7 +12,7 @@ Start-Process "C:\Git.exe" -ArgumentList "/SP /verysilent" -Wait
 $vsCodeDownloadLocation = "C:\VSCodeSetup.exe"
 $vsCode = "https://go.microsoft.com/fwlink/?Linkid=852157"
 Invoke-WebRequest -Uri $vsCode -OutFile $vsCodeDownloadLocation
-Start-Process "C:\VSCodeSetup.exe" -ArgumentList "/SP /verysilent /SUPRESSMSGBOXES" -Wait
+Start-Process "C:\VSCodeSetup.exe" -ArgumentList "/VERYSILENT /MERGETASKS=!runcode" -Wait
 
 #Install Firefox
 $firefoxDownloadLocation = "c:\firefox.exe"
