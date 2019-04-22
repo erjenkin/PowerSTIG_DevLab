@@ -52,6 +52,7 @@ Write-EventLog -LogName Application -Source 'BuildScript' -EntryType Information
 
 Install-module Powerstig -Force -Confirm:$false
 
+Write-EventLog -LogName Application -Source 'BuildScript' -EntryType Information -EventId 1 -Message 'Copying Technlogy Configs'
 [Net.ServicePointManager]::SecurityProtocol = [Net.SecurityProtocolType]::Tls12
 Invoke-WebRequest -Uri 'https://raw.githubusercontent.com/erjenkin/PowerSTIG_DevLab/master/Configs/FirefoxConfig.ps1' -OutFile 'C:\FirefoxConfig.ps1'
 Invoke-WebRequest -Uri 'https://raw.githubusercontent.com/erjenkin/PowerSTIG_DevLab/master/Configs/InternetExplorerConfig.ps1' -OutFile 'C:\InternetExplorerConfig.ps1'
@@ -60,3 +61,4 @@ Invoke-WebRequest -Uri 'https://raw.githubusercontent.com/erjenkin/PowerSTIG_Dev
 Invoke-WebRequest -Uri 'https://raw.githubusercontent.com/erjenkin/PowerSTIG_DevLab/master/Configs/Windows10Config.ps1' -OutFile 'C:\Windows10Config.ps1'
 Invoke-WebRequest -Uri 'https://raw.githubusercontent.com/erjenkin/PowerSTIG_DevLab/master/Configs/WindowsFirewallConfig.ps1' -OutFile 'C:\WindowsFirewallConfig.ps1'
 Invoke-WebRequest -Uri 'https://raw.githubusercontent.com/erjenkin/PowerSTIG_DevLab/master/Configs/WindowsDefenderConfig.ps1' -OutFile 'C:\WindowsDefenderConfig.ps1'
+Write-EventLog -LogName Application -Source 'BuildScript' -EntryType Information -EventId 1 -Message 'Copied Technlogy Configs'
