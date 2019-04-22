@@ -10,13 +10,22 @@ $ModulesTest = Get-Content C:\Github\PowerStig.psd1 | Select-String -Pattern "Mo
 C:\Modules.ps1
 
 #copy required files from your branch to PowerSTIG  module directory
-$itemsToCopy = "PowerStig.psd1", "PowerStig.psm1","DSCResources", "Module", "StigData\Processed"
+$itemsToCopy = "PowerStig.psd1", "PowerStig.psm1"
 
 foreach($item in $itemsToCopy)
 {
 $path = "C:\Github\" + $item
 $destination = $currentModulePath + $item
-Copy-Item -Path $path -Destination $destination -Recurse -force
+Copy-Item -Path $path -Destination $destination -force -Recurse
+}
+
+$dirToCopy = "DSCResources", "Module", "StigData\Processed"
+
+foreach($dir in $dirToCopy)
+{
+$path = "C:\Github\" + $dir
+$destination = $currentModulePath
+Copy-Item -Path $path -Destination $destination -force -Recurse
 }
 
 #update PowerSTIG version if newer than current release
