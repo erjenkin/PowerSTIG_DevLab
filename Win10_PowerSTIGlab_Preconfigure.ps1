@@ -50,5 +50,6 @@ Write-EventLog -LogName Application -Source 'BuildScript' -EntryType Information
 Set-Item -Path WSMan:\localhost\MaxEnvelopeSizekb -Value 8192
 Write-EventLog -LogName Application -Source 'BuildScript' -EntryType Information -EventId 1 -Message 'Increased MaxEnvelope Size'
 
-#Installs powerstig as a placeholder
-install-module Powerstig -Force -Confirm:$false
+Install-module Powerstig -Force -Confirm:$false
+
+Invoke-WebRequest -Uri 'https://raw.githubusercontent.com/rchristman89/BuildServer/master/packages.config' -OutFile 'C:\Configs'
