@@ -7,7 +7,6 @@ git clone -b "YOUBRANCHHERE" https://github.com/Microsoft/PowerStig.git c:\Githu
 
 #get modules required by your branch and updates modules locally
 $ModulesTest = Get-Content C:\Github\PowerStig.psd1 | Select-String -Pattern "ModuleName = '(.*)'; ModuleVersion = '(.*)'" | % {"Install-Module $($_.matches.groups[1]) -RequiredVersion $($_.matches.groups[2]) -force"} >> C:\Modules.ps1
-Set-ExecutionPolicy unrestricted -force
 C:\Modules.ps1
 
 #copy required files from your branch to PowerSTIG  module directory
