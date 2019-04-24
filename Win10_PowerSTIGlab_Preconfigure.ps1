@@ -46,10 +46,6 @@ Write-EventLog -LogName Application -Source 'BuildScript' -EntryType Information
 $null = winrm quickconfig -quiet
 Write-EventLog -LogName Application -Source 'BuildScript' -EntryType Information -EventId 1 -Message 'Configured WinRM'
 
-Write-EventLog -LogName Application -Source 'BuildScript' -EntryType Information -EventId 1 -Message 'Increasing MaxEnvelope Size'
-Set-Item -Path WSMan:\localhost\MaxEnvelopeSizekb -Value 8192
-Write-EventLog -LogName Application -Source 'BuildScript' -EntryType Information -EventId 1 -Message 'Increased MaxEnvelope Size'
-
 Install-module Powerstig -Force -Confirm:$false
 
 Write-EventLog -LogName Application -Source 'BuildScript' -EntryType Information -EventId 1 -Message 'Copying Technlogy Configs'
