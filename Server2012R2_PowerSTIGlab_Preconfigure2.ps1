@@ -1,4 +1,3 @@
-
 #Install SQL
 $SQLDownloadLocation = "C:\SQL.iso"
 $SQL = "https://download.microsoft.com/download/4/C/7/4C7D40B9-BCF8-4F8A-9E76-06E9B92FE5AE/ENU/SQLFULL_ENU.iso"
