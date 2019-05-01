@@ -49,11 +49,6 @@ git config --add --system http.sslverify false
 git config --add --system credential.helper wincred
 Write-EventLog -LogName Application -Source 'BuildScript' -EntryType Information -EventId 1 -Message 'Configured git'
 
-Write-EventLog -LogName Application -Source 'BuildScript' -EntryType Information -EventId 1 -Message 'Installing Pester'
-$null = Find-PackageProvider -Name 'Nuget' -ForceBootstrap -IncludeDependencies
-Install-Module Pester -Force -SkipPublisherCheck -Confirm:$false
-Write-EventLog -LogName Application -Source 'BuildScript' -EntryType Information -EventId 1 -Message 'Installed Pester'
-
 Write-EventLog -LogName Application -Source 'BuildScript' -EntryType Information -EventId 1 -Message 'Updating Help'
 Update-Help -Force -Confirm:$false
 Write-EventLog -LogName Application -Source 'BuildScript' -EntryType Information -EventId 1 -Message 'Updated Help'
