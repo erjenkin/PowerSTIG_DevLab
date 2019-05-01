@@ -32,7 +32,7 @@ $SQL = "https://download.microsoft.com/download/4/C/7/4C7D40B9-BCF8-4F8A-9E76-06
 $wc = New-Object net.webclient
 $wc.Downloadfile($SQL, $SQLDownloadLocation)
 
-$currentUserName = [System.Security.Principal.WindowsIdentity]::GetCurrent().Name;
+$currentUserName = (Get-LocalGroupMember -Group "Administrators").Name
 
 $mountVolume = Mount-DiskImage -ImagePath $SQLDownloadLocation -PassThru
 $driveLetter = ($mountVolume | Get-Volume).DriveLetter
