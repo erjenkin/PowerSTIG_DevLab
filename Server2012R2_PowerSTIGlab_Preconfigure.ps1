@@ -1,5 +1,6 @@
 New-EventLog –LogName Application –Source 'BuildScript'
 
+[Net.ServicePointManager]::SecurityProtocol = [Net.SecurityProtocolType]::Tls12
 Write-EventLog -LogName Application -Source 'BuildScript' -EntryType Information -EventId 1 -Message 'Installing Pester'
 $null = Find-PackageProvider -Name 'Nuget' -ForceBootstrap -IncludeDependencies
 Install-Module Pester -Force -SkipPublisherCheck -Confirm:$false
