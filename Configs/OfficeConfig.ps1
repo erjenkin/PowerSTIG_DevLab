@@ -7,7 +7,7 @@ Configuration Outlook2016
         $NodeName = 'localhost'
     )
 
-    Import-DscResource -ModuleName PowerStig -ModuleVersion 3.2.0
+    Import-DscResource -ModuleName PowerStig
 
     Node $NodeName
     {
@@ -29,7 +29,7 @@ Configuration Excel2016
         $NodeName = 'localhost'
     )
 
-    Import-DscResource -ModuleName PowerStig -ModuleVersion 3.2.0
+    Import-DscResource -ModuleName PowerStig
 
     Node $NodeName
     {
@@ -51,7 +51,7 @@ Configuration Word2016
         $NodeName = 'localhost'
     )
 
-    Import-DscResource -ModuleName PowerStig -ModuleVersion 3.2.0
+    Import-DscResource -ModuleName PowerStig
 
     Node $NodeName
     {
@@ -73,7 +73,7 @@ Configuration PowerPoint2016
         $NodeName = 'localhost'
     )
 
-    Import-DscResource -ModuleName PowerStig -ModuleVersion 3.2.0
+    Import-DscResource -ModuleName PowerStig
 
     Node $NodeName
     {
