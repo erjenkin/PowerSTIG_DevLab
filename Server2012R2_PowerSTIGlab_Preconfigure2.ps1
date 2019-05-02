@@ -43,11 +43,17 @@ Write-EventLog -LogName Application -Source 'BuildScript' -EntryType Information
 Install-module Powerstig -Force -Confirm:$false
 
 Write-EventLog -LogName Application -Source 'BuildScript' -EntryType Information -EventId 1 -Message 'Copying Technlogy Configs'
-Invoke-WebRequest -Uri 'https://raw.githubusercontent.com/erjenkin/PowerSTIG_DevLab/master/Configs/FirefoxConfig.ps1' -OutFile 'C:\FirefoxConfig.ps1'
+Invoke-WebRequest -Uri 'https://raw.githubusercontent.com/erjenkin/PowerSTIG_DevLab/master/Configs/IisServerConfig.ps1' -OutFile 'C:\IisServerConfig.ps1'
+Invoke-WebRequest -Uri 'https://raw.githubusercontent.com/erjenkin/PowerSTIG_DevLab/master/Configs/IisSiteConfig.ps1' -OutFile 'C:\IisSiteConfig.ps1'
+Invoke-WebRequest -Uri 'https://raw.githubusercontent.com/erjenkin/PowerSTIG_DevLab/master/Configs/SqlServerDatabaseConfig.ps1' -OutFile 'C:\SqlServerDatabaseConfig.ps1'
+Invoke-WebRequest -Uri 'https://raw.githubusercontent.com/erjenkin/PowerSTIG_DevLab/master/Configs/SqlServerInstanceConfig.ps1' -OutFile 'C:\SqlServerInstanceConfig.ps1'
+Invoke-WebRequest -Uri 'https://raw.githubusercontent.com/erjenkin/PowerSTIG_DevLab/master/Configs/WindowsDnsServerConfig.ps1' -OutFile 'C:\WindowsDnsServerConfig.ps1'
+Invoke-WebRequest -Uri 'https://raw.githubusercontent.com/erjenkin/PowerSTIG_DevLab/master/Configs/WindowsServerDCConfig.ps1' -OutFile 'C:\WindowsServerDCConfig.ps1'
+Invoke-WebRequest -Uri 'https://raw.githubusercontent.com/erjenkin/PowerSTIG_DevLab/master/Configs/WindowsServerMSConfig.ps1' -OutFile 'C:WindowsServerMSConfig.ps1'
 Write-EventLog -LogName Application -Source 'BuildScript' -EntryType Information -EventId 1 -Message 'Copied Technlogy Configs'
 
 Write-EventLog -LogName Application -Source 'BuildScript' -EntryType Information -EventId 1 -Message 'Copying Post Configuration Script'
-Invoke-WebRequest -Uri 'https://raw.githubusercontent.com/erjenkin/PowerSTIG_DevLab/master/Win10_PowerSTIGlab_PostConfigure.ps1' -OutFile 'C:\Win10_PowerSTIGlab_PostConfigure.ps1'
+Invoke-WebRequest -Uri 'https://raw.githubusercontent.com/erjenkin/PowerSTIG_DevLab/master/Server2012R2_PowerSTIGlab_PostConfigure.ps1' -OutFile 'C:\Server2012R2_PowerSTIGlab_PostConfigure.ps1'
 Write-EventLog -LogName Application -Source 'BuildScript' -EntryType Information -EventId 1 -Message 'Copied Post Configuration Script'
 
 Set-ExecutionPolicy unrestricted -force
