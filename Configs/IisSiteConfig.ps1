@@ -15,6 +15,7 @@ Configuration IisSite_Config
         {
             IisVersion  = '8.5'
             WebSiteName = 'Default Web Site'
+            WebAppPool  = 'DefaultAppPool'
 
          }
     }
